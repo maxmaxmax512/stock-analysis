@@ -16,16 +16,15 @@ For 2018 data, the initial code took .5976563 seconds to run. After refactoring,
 ## Summary
 
 These time savings were primarily the result of changing how we iterate through the data. In the original code, we iterate through the entire dataset once for each value within the array "tickers." 
-'''
-   '4) Loop through tickers
-   For i = 0 To 11
-       ticker = tickers(i)
-       totalVolume = 0
-       '5) loop through rows in the data
-       Worksheets(yearValue).Activate
-       For j = 2 To RowCount
-       '''
 
+   4) Loop through tickers
+      For i = 0 To 11
+          ticker = tickers(i)
+          totalVolume = 0
+          '5) loop through rows in the data
+          Worksheets(yearValue).Activate
+          For j = 2 To RowCount
+      
 #### What are the advantages or disadvantages of refactoring code?
 
 #### How do these pros and cons apply to refactoring the original VBA script?
