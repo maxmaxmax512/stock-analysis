@@ -66,7 +66,7 @@ The refactored code runs faster than the original code, however the code does re
 <ol>
 <li>The data is primarily sorted with the ticker fields in the same order as the ticker array items. (ascending alphabetically)
 <li>The data is secondarily sorted with the entries in chronological order, from first to last trading days within the year. (ascending chronologically)
-<ol>
+</ol>
    
 The original code required the second assumption to be true, but does not require the tracker items to be listed in ascending alphabetical order.
 
