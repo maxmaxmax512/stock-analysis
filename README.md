@@ -7,11 +7,11 @@ Steve has asked us to refactor our code so that he can expand his dataset. He is
 By refactoring the code, we were able to markedly reduce the runtime of the script.
 For 2017 data, the initial code took .59375 seconds to run. After refactoring, the code took 9.765625E-02 seconds to run. This represents a significant reduction in run time.
 
-![Runtime of 2017 Data](VBA_Challenge_2017.png)
+![Runtime of 2017 Data](resources/VBA_Challenge_2017.png)
 
 For 2018 data, the initial code took .5976563 seconds to run. After refactoring, the code took 9.765625E-02 seconds to run. This represents a significant reduction in run time.
 
-![Runtime of 2018 Data](VBA_Challenge_2018.png)
+![Runtime of 2018 Data](resources/VBA_Challenge_2018.png)
 
 ## Summary
 
@@ -89,4 +89,4 @@ With Worksheets(yearValue)
 ```
 If we add the sort to the refactored code, the run time becomes .1289063 seconds. We lose some of the efficiency from the funcition without a sort (9.765625E-02 seconds) but end up with a time that is still significantly faster than the original code (.59375 seconds).
 
-![Runtime of 2017 Data with Sort](VBA_Challenge_2017_Sort.png)
+![Runtime of 2017 Data with Sort](resources/VBA_Challenge_2017_Sort.png)
