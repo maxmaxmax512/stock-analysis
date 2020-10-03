@@ -77,7 +77,7 @@ The original code required the second assumption to be true, but does not requir
 
 The refactored code is stronger than the original code, despite requiring some additional assumptions regarding data ordering to be true in order for it to work. Since stock data is often ordered by date, instead of by ticker, it may be better for the VBA script to include a section that sorts the data prior to analysis. If the script sorted the data before it ran the analysis, then the code would be assured to return correct information. 
 
-For example, this code block will sort the data in the correct way to ensure that the assumptions are met.
+For example, this code block will sort the data in the correct way to ensure that the assumptions are met (as long as the values within the tickers array are also alphabetically ordered).
 ```vba
 Sub SortData()
   With Worksheets(yearValue)
