@@ -40,18 +40,23 @@ As we explore the dataset, we change the tickerIndex once the value within the T
     Worksheets(yearValue).Activate
     For i = 2 To RowCount
         If Cells(i, 1).Value = tickers(tickerIndex) Then
+        
         '3a) Increase volume for current ticker
         tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
         End If
+        
         '3b) Check if the current row is the first row with the selected tickerIndex.
         If Cells(i - 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then
             tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
         End If
+        
         '3c) check if the current row is the last row with the selected ticker
         If Cells(i + 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then
              tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
+             
              '3d Increase the tickerIndex.
              tickerIndex = tickerIndex + 1
+             
         End If
     Next i
 ```
