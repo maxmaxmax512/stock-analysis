@@ -79,15 +79,13 @@ The refactored code is stronger than the original code, despite requiring some a
 
 For example, this code block will sort the data in the correct way to ensure that the assumptions are met (as long as the values within the tickers array are also alphabetically ordered).
 ```vba
-Sub SortData()
-  With Worksheets(yearValue)
-        With .Cells(1, "A").CurrentRegion
-            .Cells.Sort Key1:=.Range("A1"), Order1:=xlAscending, _
-                        Key2:=.Range("B1"), Order2:=xlAscending, _
-                        Orientation:=xlTopToBottom, Header:=xlYes
-        End With
-    End With
-End Sub
+With Worksheets(yearValue)
+     With .Cells(1, "A").CurrentRegion
+         .Cells.Sort Key1:=.Range("A1"), Order1:=xlAscending, _
+                     Key2:=.Range("B1"), Order2:=xlAscending, _
+                     Orientation:=xlTopToBottom, Header:=xlYes
+     End With
+ End With
 ```
 If we add the sort to the refactored code, the run time becomes .1289063 seconds. We lose some of the efficiency from the funcition without a sort (9.765625E-02 seconds) but end up with a time that is still significantly faster than the original code (.59375 seconds).
 
