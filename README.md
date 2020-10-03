@@ -62,6 +62,11 @@ As we explore the dataset, we change the tickerIndex once the value within the T
 ```
 
 #### What are the advantages or disadvantages of refactoring code?
+Refactoring code is an important practice for all developers and analysts. As analysts, we rarely need to re-invent the wheel when we are coding. There are often other scripts and code out there that we can review, modify, improve, and otherwise tweak to meet our needs. By refactoring code, we are taking something that already works and trying to make it work better, or to extend to a new application beyond the original intent of the code. 
+
+Refactoring code extends the life of code, and saves development time by allowing us to make use of what is already out there instead of starting from scratch. Additionally, by analyzing code that other write, we may learn best practices and techniques that we don't already have under our belt.
+
+#### How do these pros and cons apply to refactoring the original VBA script?
 The refactored code runs faster than the original code, however the code does require two assumptions to be true. The code will only work if:
 <ol>
 <li>The data is primarily sorted with the ticker fields in the same order as the ticker array items. (ascending alphabetically)
@@ -70,5 +75,4 @@ The refactored code runs faster than the original code, however the code does re
    
 The original code required the second assumption to be true, but does not require the ticker items to be listed in ascending alphabetical order or to share the same order as the values within the "ticker" array.
 
-#### How do these pros and cons apply to refactoring the original VBA script?
 The refactored code is stronger than the original code, despite requiring some additional assumptions regarding data ordering to be true in order for it to work. Since stock data is often ordered by date, instead of by ticker, it may be better for the VBA script to include a section that sorts the data prior to analysis. If the script sorted the data before it ran the analysis, then the code would be assured to return correct information.
