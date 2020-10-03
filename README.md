@@ -19,7 +19,6 @@ These time savings were primarily the result of changing how we iterate through 
 
 This is the code from the original script - "Sub yearValueAnalysis()" - from lines 34-40.
 ```vba
-{
 '4) Loop through tickers
    For i = 0 To 11
        ticker = tickers(i)
@@ -27,14 +26,13 @@ This is the code from the original script - "Sub yearValueAnalysis()" - from lin
        '5) loop through rows in the data
        Worksheets(yearValue).Activate
        For j = 2 To RowCount
-}
 ```
 In this code we see that the for loop to explore the data set (designated by comment 5) is nested within the for loop to iterate through the ticker array (designated by comment 4). Because we are nesting our for loops in this order, we end up exploring the entire dataset 12 times. 
 
 In order to increase the efficiency of the script, the refactored code only has one for loop. Before we initiate the for loop, we create a "tickerIndex" variable with the value of zero.
 ```vba
-    '1a) Create a ticker Index
-    tickerIndex = 0
+'1a) Create a ticker Index
+   tickerIndex = 0
 ```
 As we explore the dataset, we change the tickerIndex once the value within the Ticker column no longer matches the value within the tickers array. This allows us to iterate through the tickers array, updating tickerVolumes, tickerStartingPrices, and tickerEndingPrices for all values of within the tickers array without needing to iterate through the dataset multiple times.
 ```vba
