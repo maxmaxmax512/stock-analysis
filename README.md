@@ -89,6 +89,4 @@ With Worksheets(yearValue)
 ```
 If we add the sort to the refactored code, the run time becomes .1289063 seconds. We lose some of the efficiency from the funcition without a sort (9.765625E-02 seconds) but end up with a time that is still significantly faster than the original code (.59375 seconds).
 
-<kbd>
-![Runtime of 2017 Data with Sort](resources/VBA_Challenge_2017_Sort.png)
-</kbd>
+> ![Runtime of 2017 Data with Sort](resources/VBA_Challenge_2017_Sort.png)
