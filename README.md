@@ -62,5 +62,10 @@ As we explore the dataset, we change the tickerIndex once the value within the T
 ```
 
 #### What are the advantages or disadvantages of refactoring code?
+The refactored code runs faster than the original code, however the code does require two assumptions to be true. The code will only work if:
+<ol>
+<li>The data is sorted with the ticker fields in the same order as the ticker array items.
+<li>The data is sorted with the entries in ascending chronological order, from first to last.
+<ol>
 
 #### How do these pros and cons apply to refactoring the original VBA script?
