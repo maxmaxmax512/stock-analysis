@@ -15,6 +15,6 @@ For 2018 data, the initial code took .5976563 seconds to run. After refactoring,
 
 ## Summary
 
-###What are the advantages or disadvantages of refactoring code?
+#### What are the advantages or disadvantages of refactoring code?
 
-###How do these pros and cons apply to refactoring the original VBA script?
+#### How do these pros and cons apply to refactoring the original VBA script?
