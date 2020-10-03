@@ -68,7 +68,7 @@ The refactored code runs faster than the original code, however the code does re
 <li>The data is secondarily sorted with the entries in chronological order, from first to last trading days within the year. (ascending chronologically)
 </ol>
    
-The original code required the second assumption to be true, but does not require the tracker items to be listed in ascending alphabetical order.
+The original code required the second assumption to be true, but does not require the ticker items to be listed in ascending alphabetical order or to share the same order as the values within the "ticker" array.
 
 #### How do these pros and cons apply to refactoring the original VBA script?
-The refactored code is stronger than the original code, despite requiring some additional assumptions regarding data ordering to be true in order for it to work. Since stock data is often ordered by data, instead of by ticker, it may be better for the VBA script to include a section that re-sorts the data prior to analysis. If we re-sorted the data before we ran our check, then we would be assured that the data was ordered in the correct manner. 
+The refactored code is stronger than the original code, despite requiring some additional assumptions regarding data ordering to be true in order for it to work. Since stock data is often ordered by date, instead of by ticker, it may be better for the VBA script to include a section that sorts the data prior to analysis. If the script sorted the data before it ran the analysis, then the code would be assured to return correct information.
