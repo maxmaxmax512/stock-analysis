@@ -75,4 +75,15 @@ The refactored code runs faster than the original code, however the code does re
    
 The original code required the second assumption to be true, but does not require the ticker items to be listed in ascending alphabetical order or to share the same order as the values within the "ticker" array.
 
-The refactored code is stronger than the original code, despite requiring some additional assumptions regarding data ordering to be true in order for it to work. Since stock data is often ordered by date, instead of by ticker, it may be better for the VBA script to include a section that sorts the data prior to analysis. If the script sorted the data before it ran the analysis, then the code would be assured to return correct information.
+The refactored code is stronger than the original code, despite requiring some additional assumptions regarding data ordering to be true in order for it to work. Since stock data is often ordered by date, instead of by ticker, it may be better for the VBA script to include a section that sorts the data prior to analysis. If the script sorted the data before it ran the analysis, then the code would be assured to return correct information. For example, this code block will sort the data in the correct way to ensure that the assumptions are met.
+```vba
+Sub SortData()
+  With Worksheets(yearValue)
+        With .Cells(1, "A").CurrentRegion
+            .Cells.Sort Key1:=.Range("A1"), Order1:=xlAscending, _
+                        Key2:=.Range("B1"), Order2:=xlAscending, _
+                        Orientation:=xlTopToBottom, Header:=xlYes
+        End With
+    End With
+End Sub
+```
