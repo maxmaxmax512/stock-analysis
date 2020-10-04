@@ -39,10 +39,10 @@ As we explore the dataset, we change the tickerIndex once the value within the T
  '2b) Loop over all the rows in the spreadsheet.
     Worksheets(yearValue).Activate
     For i = 2 To RowCount
-        If Cells(i, 1).Value = tickers(tickerIndex) Then
         
         '3a) Increase volume for current ticker
-        tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
+        If Cells(i, 1).Value = tickers(tickerIndex) Then
+            tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
         End If
         
         '3b) Check if the current row is the first row with the selected tickerIndex.
